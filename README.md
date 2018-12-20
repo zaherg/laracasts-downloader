@@ -64,7 +64,7 @@ docker run --rm -it \
     download <slug1> <slug2> <slug3>
 ```
 
-**PS**: Make sure the `DOWNLOAD_DIR` value is `/src/app/download` in this cause.
+**PS**: Make sure that the `DOWNLOAD_DIR` value is `/src/app/download` in this cause.
 
 
 
