@@ -1,0 +1,33 @@
+#! /usr/bin/env php
+
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+use Dotenv\Dotenv;
+use GuzzleHttp\Client;
+use App\Commands\Download;
+use GuzzleHttp\Cookie\CookieJar;
+use League\Flysystem\Filesystem;
+use League\Flysystem\Adapter\Local;
+use Symfony\Component\Console\Application;
+
+$dotenv = new Dotenv(__DIR__);
+$dotenv->load();
+
+$cookie = new CookieJar();
+$client = new Client([
+    'base_uri' => 'https://laracasts.com',
+    'verify' => false,
+//    'timeout' => 2.0,
+    'allow_redirects' => ['track_redirects' => true],
+    'cookies' => $cookie,
+]);
+
+$filesystem = new Filesystem(new Local(getenv('DOWNLOAD_DIR')));
+
+$app = new Application('Laracasts Downloader', '0.1');
+$app->add(new Download($client, $filesystem));
+
+$app->setAutoExit(true);
+$app->run();
