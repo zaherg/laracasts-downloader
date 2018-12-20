@@ -36,7 +36,8 @@ following courses
 
 # NOTE
  
-THE SOFTWARE IS PROVIDED "AS IS", so am not responsible if Jeffery got mad of you.
+1. THE SOFTWARE IS PROVIDED "AS IS", so am not responsible if Jeffery got mad of you.
+2. The application may stop working at any giving moment, when the site structure change, and I can't promise I will fix it. 
 
 ## Inspiration 
 
