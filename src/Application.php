@@ -37,7 +37,6 @@ class Application
             $this->filesystem->deleteDir($seriesPath);
         }
 
-
         $this->filesystem->createDir($seriesPath);
 
         return [$dir, $seriesPath];

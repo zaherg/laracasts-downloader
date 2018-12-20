@@ -20,8 +20,7 @@ class Download
 
     public function getItems($links, $output, $dir, $seriesPath)
     {
-
-        $output->writeln(\sprintf("We are going to download <fg=red;options=bold>%d</> files.\n",  $links->count()));
+        $output->writeln(\sprintf("We are going to download <fg=red;options=bold>%d</> files.\n", $links->count()));
 
         $links->transform(function ($item) {
             $crawler = (new Crawler($this->client))->getCrawler($item);
@@ -71,8 +70,8 @@ class Download
 
         $this->filesystem->rename($seriesPath . DIRECTORY_SEPARATOR . $fileName, $seriesPath . DIRECTORY_SEPARATOR . $file);
 
-        $message = sprintf( '<fg=green;options=bold>[Success]</>: file <fg=green;options=bold,underscore>%s</> has been downloaded successfully.', basename($file));
+        $message = sprintf('<fg=green;options=bold>[Success]</>: file <fg=green;options=bold,underscore>%s</> has been downloaded successfully.', basename($file));
 
-        $output->writeln($message ."\n");
+        $output->writeln($message . "\n");
     }
 }

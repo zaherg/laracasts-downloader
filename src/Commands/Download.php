@@ -38,9 +38,8 @@ class Download extends Command
         $io = new SymfonyStyle($input, $output);
         $app = new Application($this->client, $this->filesystem);
 
-        foreach($input->getArgument('series') as $course) {
-
-            $io->section('Downloading '. $course);
+        foreach ($input->getArgument('series') as $course) {
+            $io->section('Downloading ' . $course);
 
             $slug = sprintf('/series/%s', $course);
 
@@ -59,6 +58,5 @@ class Download extends Command
             $links = $app->getLinksCollection($slug);
             $download->getItems($links, $io, $this->dir, $this->seriesPath);
         }
-
     }
 }
