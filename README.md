@@ -8,7 +8,7 @@ __PS__: This is still a prototype that I've wrote in few hours, so it still need
 
 1. Clone the repository
 ```
-git clone 
+git clone https://github.com/linuxjuggler/laracasts-downloader.git
 ```
 
 2. Install the dependencies using `composer`
@@ -17,7 +17,9 @@ git clone
 composer install
 ```
 
-3. Run the command:
+3. Make sure you have a `.env` file similar to `.env.example` but add your login information
+
+4. Run the command:
 
 ```
 ./laracasts download <slug1> <slug2> <slug3>
@@ -33,6 +35,39 @@ following courses
 ```
 ./laracasts download whats-new-in-laravel-5-7 webpack-for-everyone laravel-nova-mastery
 ```
+
+## Building the docker image
+
+1. Clone the repository
+
+```
+git clone https://github.com/linuxjuggler/laracasts-downloader.git
+```
+
+2. Make sure you have [Docker](https://docker.com) installed
+
+3. Run the following command from within the code directory to build the image
+
+```
+./build
+```
+
+4. Make sure you have a `.env` file similar to `.env.example` but add your login information
+
+5. Run the following command to work with the image
+
+```
+docker run --rm -it \
+    -v .env=/src/app/.env \
+    -v ~/Download=/src/app/download \
+    zaherg/laracasts-downloader:latest \
+    download <slug1> <slug2> <slug3>
+```
+
+**PS**: Make sure the `DOWNLOAD_DIR` value is `/src/app/download` in this cause.
+
+
+
 
 # NOTE
  
