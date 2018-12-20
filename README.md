@@ -36,7 +36,7 @@ following courses
 ./laracasts download whats-new-in-laravel-5-7 webpack-for-everyone laravel-nova-mastery
 ```
 
-## Building the docker image
+## Building Docker image
 
 1. Clone the repository
 
