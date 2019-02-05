@@ -12,8 +12,13 @@ use League\Flysystem\Filesystem;
 use League\Flysystem\Adapter\Local;
 use Symfony\Component\Console\Application;
 
-$dotenv = new Dotenv(__DIR__);
-$dotenv->load();
+try {
+    $dotenv = new Dotenv(__DIR__);
+    $dotenv->load();
+} catch (\Dotenv\Exception\InvalidPathException $excption) {
+    echo 'Unable to read the environment file, please create one' . PHP_EOL;
+    exit(1);
+}
 
 $cookie = new CookieJar();
 $client = new Client([

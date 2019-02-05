@@ -1,0 +1,17 @@
+{
+    "directories": [
+        "src",
+        "vendor"
+    ],
+    "files": [
+        "composer.json",
+        ".env.example"
+    ],
+    "exclude-composer-files": false,
+    "compression": "GZ",
+    "compactors": [
+        "KevinGH\\Box\\Compactor\\Php",
+        "KevinGH\\Box\\Compactor\\Json"
+    ],
+    "output" : "./builds/laracasts.phar"
+}

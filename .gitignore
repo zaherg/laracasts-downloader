@@ -1,4 +1,6 @@
 download
 vendor
+vendor-bin/
+builds
 .env
 .DS_Store
