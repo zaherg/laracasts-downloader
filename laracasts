@@ -4,19 +4,19 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-use Dotenv\Dotenv;
 use GuzzleHttp\Client;
 use App\Commands\Download;
 use GuzzleHttp\Cookie\CookieJar;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Adapter\Local;
+use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\Console\Application;
 
 try {
-    $dotenv = new Dotenv(__DIR__);
-    $dotenv->load();
-} catch (\Dotenv\Exception\InvalidPathException $excption) {
-    echo 'Unable to read the environment file, please create one' . PHP_EOL;
+    $dotenv = new Dotenv();
+    $dotenv->load(__DIR__ . '/.env');
+} catch (\Symfony\Component\Dotenv\Exception\PathException $excption) {
+    echo 'Unable to read the environment file, please create one first.' . PHP_EOL;
     exit(1);
 }
 
