@@ -13,5 +13,5 @@
         "KevinGH\\Box\\Compactor\\Php",
         "KevinGH\\Box\\Compactor\\Json"
     ],
-    "output" : "./builds/laracasts.phar"
+    "output" : "./builds/laracasts"
 }
