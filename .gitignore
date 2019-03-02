@@ -1,6 +1,8 @@
-download
-vendor
+.idea
+download/
+Download/
+vendor/
 vendor-bin/
-builds
+builds/
 .env
 .DS_Store

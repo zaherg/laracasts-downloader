@@ -25,7 +25,7 @@ class Download extends Command
         $this->filesystem = $filesystem;
     }
 
-    public function configure()
+    public function configure(): void
     {
         $this->setName('download')
             ->setProcessTitle('Laracasts Downloader')
@@ -33,7 +33,7 @@ class Download extends Command
             ->setDescription('This command will download the courses you specify');
     }
 
-    public function execute(InputInterface $input, OutputInterface $output)
+    public function execute(InputInterface $input, OutputInterface $output): void
     {
         $io = new SymfonyStyle($input, $output);
         $app = new Application($this->client, $this->filesystem);

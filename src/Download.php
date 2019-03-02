@@ -18,7 +18,7 @@ class Download
         $this->filesystem = $filesystem;
     }
 
-    public function getItems($links, $output, $dir, $seriesPath)
+    public function getItems($links, $output, $dir, $seriesPath): void
     {
         $output->writeln(\sprintf("We are going to download <fg=red;options=bold>%d</> files.\n", $links->count()));
 
@@ -35,12 +35,12 @@ class Download
             ->flatten()
             ->filter(function ($link) {
                 return Str::contains($link, 'downloads');
-            })->each(function ($item) use ($output, $dir, $seriesPath) {
+            })->each(function ($item) use ($output, $dir, $seriesPath): void {
                 $this->get($item, $output, $dir, $seriesPath);
             });
     }
 
-    private function get($link, $output, $dir, $seriesPath)
+    private function get($link, $output, $dir, $seriesPath): void
     {
         $fileName = Str::random(10) . '.mp4';
 
@@ -51,7 +51,7 @@ class Download
         $file = $this->client
             ->request('GET', $link, [
                 'sink' => fopen($dir . DIRECTORY_SEPARATOR . $fileName, 'wb'),
-                'progress' => function ($downloadTotal, $downloadedBytes, $uploadTotal, $uploadedBytes) use ($progress) {
+                'progress' => function ($downloadTotal, $downloadedBytes, $uploadTotal, $uploadedBytes) use ($progress): void {
                     $progress->setMaxSteps($downloadTotal);
                     $progress->start();
 
