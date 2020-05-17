@@ -1,4 +1,4 @@
-# Laracasts Downloader
+# Laracasts Downloader [![](https://img.shields.io/badge/sponsor-using%20BTC%20lightning%20network-blue.svg)](https://tippin.me/@zaherg)
 
 This is a CLI application which will download **Laracasts** courses, if and **only** if you are a member.
 
