@@ -16,8 +16,8 @@
     },
     "require": {
         "php": "^7.2",
-        "ext-json": "^1.6",
-        "ext-mbstring": "^7.2",
+        "ext-json": "*",
+        "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^6.3",
         "illuminate/support": "^5.7",
         "league/flysystem": "^1.0",
